@@ -2,12 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menuToggle");
   const nav = document.getElementById("nav");
   const backToTop = document.getElementById("backToTop");
-  const form = document.getElementById("contactForm");
-  const formMessage = document.getElementById("formMessage");
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const filterItems = document.querySelectorAll(".filter-item");
-  const statNumbers = document.querySelectorAll(".stat-number");
   const revealElements = document.querySelectorAll(".reveal");
+  const statNumbers = document.querySelectorAll(".stat-number");
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
 
   if (menuToggle && nav) {
     menuToggle.addEventListener("click", () => {
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 280) {
       backToTop.classList.add("show");
     } else {
       backToTop.classList.remove("show");
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.12,
+      threshold: 0.14,
     }
   );
 
@@ -57,29 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let statsAnimated = false;
 
-  const statsObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !statsAnimated) {
-          statsAnimated = true;
-          animateStats();
-        }
-      });
-    },
-    {
-      threshold: 0.4,
-    }
-  );
-
-  if (statNumbers.length > 0) {
-    statsObserver.observe(statNumbers[0].closest(".stats"));
-  }
-
   function animateStats() {
     statNumbers.forEach((stat) => {
       const target = Number(stat.getAttribute("data-target"));
       let current = 0;
-      const increment = Math.max(1, Math.ceil(target / 50));
+      const increment = Math.max(1, Math.ceil(target / 40));
 
       const counter = setInterval(() => {
         current += increment;
@@ -90,57 +71,56 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           stat.textContent = current;
         }
-      }, 30);
+      }, 35);
     });
   }
 
-  filterButtons.forEach((button) => {
+  const statsSection = document.querySelector(".stats");
+
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+            animateStats();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    statsObserver.observe(statsSection);
+  }
+
+  tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const filter = button.getAttribute("data-filter");
+      const targetId = button.getAttribute("data-tab");
 
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      tabButtons.forEach((btn) => btn.classList.remove("active"));
+      tabContents.forEach((content) => content.classList.remove("active"));
+
       button.classList.add("active");
+      const activeContent = document.getElementById(targetId);
 
-      filterItems.forEach((item) => {
-        const category = item.getAttribute("data-category");
-
-        if (filter === "all" || category === filter) {
-          item.classList.remove("hidden");
-        } else {
-          item.classList.add("hidden");
-        }
-      });
+      if (activeContent) {
+        activeContent.classList.add("active");
+      }
     });
   });
 
-  if (form) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+      const isActive = item.classList.contains("active");
 
-      const nombre = document.getElementById("nombre").value.trim();
-      const telefono = document.getElementById("telefono").value.trim();
-      const correo = document.getElementById("correo").value.trim();
-      const servicio = document.getElementById("servicio").value;
+      document.querySelectorAll(".accordion-item").forEach((accordionItem) => {
+        accordionItem.classList.remove("active");
+      });
 
-      if (!nombre || !telefono || !correo || !servicio) {
-        formMessage.textContent = "Por favor, completa todos los campos obligatorios.";
-        formMessage.style.color = "#b42318";
-        return;
+      if (!isActive) {
+        item.classList.add("active");
       }
-
-      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
-
-      if (!emailValido) {
-        formMessage.textContent = "Por favor, ingresa un correo electrónico válido.";
-        formMessage.style.color = "#b42318";
-        return;
-      }
-
-      formMessage.textContent =
-        "Tu solicitud fue enviada correctamente. Este mensaje es una simulación visual.";
-      formMessage.style.color = "#238c94";
-
-      form.reset();
     });
-  }
+  });
 });
