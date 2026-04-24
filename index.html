@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carnegie Med | Medicina, Terapia Física y Medicina Regenerativa</title>
-  <meta
-    name="description"
-    content="Sitio informativo de Carnegie Med con servicios de terapia física, medicina general, medicina regenerativa, terapia de luz roja y evaluación fotométrica OligoCheck."
-  />
+  <title>Carnegie Med | Medicina Regenerativa, Terapia Física y Rehabilitación</title>
+  <meta name="description" content="Sitio informativo de Carnegie Med con servicios de terapia física, medicina general, medicina regenerativa, terapia de luz roja y evaluación fotométrica OligoCheck." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER / NAV
+  ═══════════════════════════════════════════ -->
   <header class="header" id="inicio">
     <div class="container nav-container">
       <a href="#inicio" class="logo">
@@ -50,14 +48,16 @@
       </div>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO — usa FotoTerapia.jpeg (terapia física real, impactante)
+    ═══════════════════════════════════════════ -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content reveal">
@@ -68,12 +68,10 @@
             la rehabilitación funcional y nuevas herramientas de apoyo clínico
             para acompañar a cada paciente de una forma cercana, clara y profesional.
           </p>
-
           <div class="hero-actions">
             <a href="#contacto-rapido" class="btn btn-primary">Solicitar información</a>
             <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
           </div>
-
           <div class="hero-highlights">
             <div class="highlight-card">
               <strong>Terapia Física</strong>
@@ -94,71 +92,127 @@
           </div>
         </div>
 
+        <!-- Hero image: FotoTerapia.jpeg (terapia en acción) -->
         <div class="hero-image reveal delay-1">
-          <img
-            src="public/FotoTerapia.jpeg"
-            alt="Carnegie Med medicina y terapia física"
-          />
+          <img src="public/FotoTerapia.jpeg" alt="Terapia física Carnegie Med" />
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         BANNER COMBINADO — FotoMedicinaMasTerapia.jpeg
+         Banner gráfico de marca que combina ambos servicios
+    ═══════════════════════════════════════════ -->
+    <section class="banner-strip reveal">
+      <div class="container">
+        <img
+          src="public/FotoMedicinaMasTerapia.jpeg"
+          alt="Terapia Física + Medicina General – Carnegie Med"
+          class="banner-img"
+        />
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         NOSOTROS — Dr. David en escritorio (FotoDavid.jpeg)
+         + texto sobre la propuesta
+    ═══════════════════════════════════════════ -->
     <section class="section about" id="nosotros">
       <div class="container section-grid">
+
+        <!-- FotoDavid.jpeg: foto profesional del Dr. en su consultorio -->
         <div class="section-image reveal">
-          <img
-            src="public/FotoMedicina.jpeg"
-            alt="Equipo médico Carnegie Med"
-          />
+          <img src="public/FotoDavid.jpeg" alt="Dr. David Carnegie Richards – Carnegie Med" />
+          <div class="doctor-badge">
+            <strong>Dr. David Carnegie Richards</strong>
+            <span>Medicina General &amp; Terapia Física</span>
+          </div>
         </div>
 
         <div class="section-content reveal delay-1">
           <span class="section-tag">Nosotros</span>
           <h2>Una propuesta profesional, moderna y centrada en el paciente</h2>
           <p>
-            Carnegie Med es un espacio informativo y clínico que integra atención
-            en medicina general, terapia física, medicina regenerativa y tecnologías
-            complementarias orientadas al bienestar y la valoración del paciente.
+            Carnegie Med es un espacio clínico liderado por el Dr. David Carnegie Richards,
+            que integra atención en medicina general, terapia física, medicina regenerativa
+            y tecnologías complementarias orientadas al bienestar y la valoración del paciente.
           </p>
           <p>
-            La página está diseñada para que las personas conozcan con claridad
-            qué servicios se ofrecen, cómo pueden contactarnos y qué tipo de
-            acompañamiento profesional pueden encontrar en consulta.
+            Cada consulta es una oportunidad para acompañar al paciente con cercanía,
+            claridad y un enfoque profesional que va más allá del síntoma.
           </p>
-
           <div class="pill-group">
             <span class="pill">Atención integral</span>
             <span class="pill">Enfoque moderno</span>
             <span class="pill">Información clara</span>
-            <span class="pill">Experiencia visual profesional</span>
+            <span class="pill">Experiencia profesional</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section services-block light-bg" id="servicios">
+    <!-- ═══════════════════════════════════════════
+         VIDEO INTRODUCCIÓN DEL DR. DAVID
+         videoDavid.mp4 — encaja perfecto como puente
+         entre "Nosotros" y "Servicios"
+    ═══════════════════════════════════════════ -->
+    <section class="section intro-video-section light-bg">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Bienvenida</span>
+          <h2>Una palabra del Dr. David Carnegie</h2>
+          <p>
+            Conozca de primera mano la visión, los valores y el compromiso
+            que impulsan a Carnegie Med cada día.
+          </p>
+        </div>
+
+        <div class="intro-video-wrapper reveal delay-1">
+          <div class="intro-video-frame">
+            <video controls preload="metadata" poster="public/FotoDavid.jpeg">
+              <source src="public/videoDavid.mp4" type="video/mp4" />
+              Tu navegador no soporta el video.
+            </video>
+          </div>
+          <div class="intro-video-caption">
+            <div class="caption-badge">
+              <img src="public/LogoColor2.jpeg" alt="Logo Carnegie Med" />
+              <div>
+                <strong>Dr. David Carnegie Richards</strong>
+                <span>Fundador de Carnegie Med</span>
+              </div>
+            </div>
+            <p>
+              "Mi compromiso es brindar una atención cercana, clara y de calidad.
+              En Carnegie Med cada paciente importa y cada consulta es una oportunidad
+              de hacer la diferencia."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SERVICIOS — tarjetas con imágenes distintas
+         Terapia: FotoTerapia2.jpeg
+         Medicina: FotoMedicina.jpeg
+         Regenerativa: FotoMedicina2.jpeg
+    ═══════════════════════════════════════════ -->
+    <section class="section services-block" id="servicios">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">Servicios</span>
           <h2>Áreas de atención</h2>
-          <p>
-            Hemos organizado los servicios en bloques claros para que el usuario
-            pueda navegar fácilmente por cada línea de atención.
-          </p>
+          <p>Organizamos los servicios en bloques claros para que pueda navegar fácilmente por cada línea de atención.</p>
         </div>
 
         <div class="cards-grid services-grid-main">
+          <!-- FotoTerapia2.jpeg: terapeuta trabajando con paciente -->
           <article class="service-card reveal">
-            <img
-              src="public/FotoTerapia2.jpeg"
-              alt="Terapia física"
-            />
+            <img src="public/FotoTerapia2.jpeg" alt="Terapia física" />
             <div class="card-body">
               <h3>Terapia Física</h3>
-              <p>
-                Atención enfocada en recuperación funcional, lesiones deportivas,
-                manejo de dolor musculoesquelético y mejora del movimiento.
-              </p>
+              <p>Atención enfocada en recuperación funcional, lesiones deportivas, manejo de dolor musculoesquelético y mejora del movimiento.</p>
               <ul class="mini-list">
                 <li>Lesiones deportivas</li>
                 <li>Dolor de hombro y rodilla</li>
@@ -167,17 +221,12 @@
             </div>
           </article>
 
+          <!-- FotoMedicina.jpeg: médico con tableta -->
           <article class="service-card reveal delay-1">
-            <img
-              src="public/FotoTerapia.jpeg"
-              alt="Medicina general"
-            />
+            <img src="public/FotoMedicina.jpeg" alt="Medicina general" />
             <div class="card-body">
               <h3>Medicina General</h3>
-              <p>
-                Valoración médica integral, control de condiciones frecuentes y
-                seguimiento clínico con una atención cercana y profesional.
-              </p>
+              <p>Valoración médica integral, control de condiciones frecuentes y seguimiento clínico con una atención cercana y profesional.</p>
               <ul class="mini-list">
                 <li>Consulta general</li>
                 <li>Control de enfermedades crónicas</li>
@@ -186,17 +235,12 @@
             </div>
           </article>
 
+          <!-- FotoMedicina2.jpeg: consulta médica -->
           <article class="service-card reveal delay-2">
-            <img
-              src="public/FotoMedicina2.jpeg"
-              alt="Medicina regenerativa y terapia de luz roja"
-            />
+            <img src="public/FotoMedicina2.jpeg" alt="Medicina regenerativa y terapia de luz roja" />
             <div class="card-body">
               <h3>Medicina Regenerativa y Terapia de Luz Roja</h3>
-              <p>
-                Un apartado orientado a terapias complementarias enfocadas en apoyo
-                al bienestar, recuperación y abordajes personalizados según cada caso.
-              </p>
+              <p>Terapias complementarias enfocadas en apoyo al bienestar, recuperación y abordajes personalizados según cada caso.</p>
               <ul class="mini-list">
                 <li>Medicina regenerativa</li>
                 <li>Terapia de luz roja</li>
@@ -208,136 +252,142 @@
       </div>
     </section>
 
-    <section class="section featured-split">
+    <!-- ═══════════════════════════════════════════
+         SPLIT — TERAPIA FÍSICA
+         DavidTerapeutico.jpeg (Dr. David parado en sala de terapia)
+    ═══════════════════════════════════════════ -->
+    <section class="section featured-split light-bg">
       <div class="container split-grid">
+        <!-- DavidTerapeutico.jpeg: Dr. David en sala con equipos de terapia -->
         <div class="split-image reveal">
-          <img
-            src="public/FotoTerapia.jpeg"
-            alt="Servicio de terapia física"
-          />
+          <img src="public/DavidTerapeutico.jpeg" alt="Dr. David Carnegie – Terapia Física" />
         </div>
         <div class="split-content reveal delay-1">
           <span class="section-tag">Terapia Física</span>
           <h2>Movimiento, recuperación y función</h2>
           <p>
-            El apartado de terapia física está pensado para personas que buscan
-            atención en lesiones deportivas, molestias articulares, dolor
-            musculoesquelético y procesos de rehabilitación orientados a recuperar
-            seguridad y funcionalidad.
+            La terapia física está pensada para personas que buscan atención en lesiones deportivas,
+            molestias articulares, dolor musculoesquelético y procesos de rehabilitación orientados
+            a recuperar seguridad y funcionalidad.
           </p>
           <p>
-            El objetivo es acompañar al paciente desde una valoración clara y una
-            atención enfocada en mejorar movilidad, estabilidad y calidad de vida.
+            El Dr. David Carnegie acompaña a cada paciente desde una valoración clara
+            y una atención enfocada en mejorar movilidad, estabilidad y calidad de vida.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section featured-split light-bg">
+    <!-- ═══════════════════════════════════════════
+         SPLIT — MEDICINA GENERAL
+         DavidTerapeutico2.jpeg (Dr. David sentado, más clínico)
+    ═══════════════════════════════════════════ -->
+    <section class="section featured-split">
       <div class="container split-grid reverse">
+        <!-- DavidTerapeutico2.jpeg: Dr. David sentado en consulta -->
         <div class="split-image reveal">
-          <img
-            src="public/FotoMedicina.jpeg"
-            alt="Servicio de medicina general"
-          />
+          <img src="public/DavidTerapeutico2.jpeg" alt="Dr. David Carnegie – Medicina General" />
         </div>
         <div class="split-content reveal delay-1">
           <span class="section-tag">Medicina General</span>
           <h2>Valoración médica clara y seguimiento profesional</h2>
           <p>
-            La consulta médica está orientada a brindar una atención integral
-            para pacientes que requieren evaluación, orientación diagnóstica,
-            control clínico o seguimiento de condiciones frecuentes.
+            La consulta médica está orientada a brindar una atención integral para pacientes
+            que requieren evaluación, orientación diagnóstica, control clínico o seguimiento
+            de condiciones frecuentes.
           </p>
           <p>
-            Este bloque comunica confianza, estructura y cercanía, manteniendo
-            un diseño visual alineado con la identidad médica del sitio.
+            Un espacio de confianza donde cada paciente recibe atención individualizada,
+            información clara y un acompañamiento que trasciende la consulta.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section regenerative-section">
+    <!-- ═══════════════════════════════════════════
+         SPLIT — MEDICINA REGENERATIVA
+         FotoMedicina2.jpeg
+    ═══════════════════════════════════════════ -->
+    <section class="section regenerative-section light-bg">
       <div class="container split-grid">
         <div class="split-image reveal">
-          <img
-            src="public/FotoMedicina2.jpeg"
-            alt="Medicina regenerativa y terapia de luz roja"
-          />
+          <img src="public/FotoMedicina2.jpeg" alt="Medicina regenerativa y terapia de luz roja" />
         </div>
         <div class="split-content reveal delay-1">
-          <span class="section-tag">Nuevo bloque</span>
+          <span class="section-tag">Innovación clínica</span>
           <h2>Medicina Regenerativa y Terapia de Luz Roja</h2>
           <p>
-            Este apartado reúne dos líneas complementarias que pueden presentarse
-            como un solo bloque dentro del sitio: medicina regenerativa y terapia
-            de luz roja. Visualmente funcionan muy bien juntas porque ambas se
-            perciben como parte de una propuesta moderna, complementaria e innovadora.
+            Este bloque reúne dos líneas complementarias: medicina regenerativa y terapia
+            de luz roja. Ambas se perciben como parte de una propuesta moderna, complementaria
+            e innovadora orientada al bienestar integral.
           </p>
-          <p>
-            En esta sección la página comunica una visión actual del acompañamiento
-            clínico, mostrando opciones terapéuticas que se integran al contexto
-            general de bienestar, apoyo funcional y personalización de la atención.
-          </p>
-
           <div class="feature-mini-grid">
             <div class="feature-mini-card">
               <h3>Medicina regenerativa</h3>
-              <p>
-                Espacio informativo para explicar el enfoque, objetivos y tipo de
-                atención que se brinda en consulta.
-              </p>
+              <p>Enfoque, objetivos y tipo de atención personalizada en consulta.</p>
             </div>
             <div class="feature-mini-card">
               <h3>Terapia de luz roja</h3>
-              <p>
-                Un bloque visualmente moderno para presentar esta herramienta como
-                parte de un abordaje complementario.
-              </p>
+              <p>Herramienta moderna como parte de un abordaje complementario.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         NUESTRA CLÍNICA — galería con imágenes reales
+         FotoClinica.jpeg + FotoEscritorio.jpeg + FotoDavid.jpeg
+    ═══════════════════════════════════════════ -->
+    <section class="section clinic-gallery-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Nuestro espacio</span>
+          <h2>Conozca la clínica</h2>
+          <p>Un ambiente profesional, cómodo y equipado para brindarle la mejor atención.</p>
+        </div>
+
+        <div class="clinic-gallery reveal">
+          <!-- FotoClinica.jpeg: exterior del edificio -->
+          <div class="clinic-photo clinic-large">
+            <img src="public/FotoClinica.jpeg" alt="Exterior de Carnegie Med" />
+            <div class="clinic-label">Nuestra ubicación</div>
+          </div>
+          <!-- FotoEscritorio.jpeg: sala de tratamiento interior -->
+          <div class="clinic-photo">
+            <img src="public/FotoEscritorio.jpeg" alt="Sala de tratamiento Carnegie Med" />
+            <div class="clinic-label">Sala de tratamiento</div>
+          </div>
+          <!-- FotoDavid.jpeg: Dr. David en su consultorio -->
+          <div class="clinic-photo">
+            <img src="public/FotoDavid.jpeg" alt="Consultorio Dr. Carnegie" />
+            <div class="clinic-label">Consultorio médico</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOTOMETRÍA / OLIGOCHECK
+    ═══════════════════════════════════════════ -->
     <section class="section photometry-section light-bg" id="fotometria">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">Evaluación complementaria</span>
           <h2>Fotometría corporal / OligoCheck</h2>
-          <p>
-            Un espacio informativo pensado para explicar de forma clara qué es esta
-            herramienta, qué tipo de información brinda y cómo se integra dentro de
-            una valoración más amplia del paciente.
-          </p>
+          <p>Un espacio informativo para explicar de forma clara qué es esta herramienta, qué información brinda y cómo se integra dentro de una valoración más amplia del paciente.</p>
         </div>
 
         <div class="photometry-layout">
           <div class="photometry-card reveal">
             <h3>¿Qué es OligoCheck?</h3>
-            <p>
-              OligoCheck es una herramienta de evaluación fotométrica utilizada como
-              apoyo informativo para estimar ciertos parámetros relacionados con
-              minerales, oligoelementos y exposición a metales pesados en el cuerpo.
-            </p>
-            <p>
-              Dentro de la página, esta sección debe presentarse como una forma de
-              complementar la valoración clínica, no como sustituto de la consulta,
-              el examen físico ni los estudios médicos indicados por el profesional.
-            </p>
+            <p>OligoCheck es una herramienta de evaluación fotométrica utilizada como apoyo informativo para estimar ciertos parámetros relacionados con minerales, oligoelementos y exposición a metales pesados en el cuerpo.</p>
+            <p>Se presenta como complemento de la valoración clínica, no como sustituto de la consulta, el examen físico ni los estudios médicos indicados.</p>
           </div>
-
           <div class="photometry-card reveal delay-1">
-            <h3>¿Qué aporta esta sección al sitio?</h3>
-            <p>
-              Aporta innovación, diferenciación y profundidad informativa. También
-              comunica que la práctica incorpora herramientas actuales para enriquecer
-              la comprensión del estado general del paciente.
-            </p>
-            <p>
-              Visualmente, este bloque puede convertirse en uno de los puntos más
-              atractivos del sitio porque combina tecnología, salud y experiencia de usuario.
-            </p>
+            <h3>¿Qué aporta esta sección?</h3>
+            <p>Aporta innovación, diferenciación y profundidad informativa. Comunica que la práctica incorpora herramientas actuales para enriquecer la comprensión del estado general del paciente.</p>
+            <p>Combina tecnología, salud y experiencia de usuario en un solo bloque visualmente atractivo.</p>
           </div>
         </div>
 
@@ -347,40 +397,24 @@
             <button class="tab-btn" data-tab="tab2">Cómo se interpreta</button>
             <button class="tab-btn" data-tab="tab3">Para quién puede ser útil</button>
           </div>
-
           <div class="tab-content active" id="tab1">
-            <p>
-              Esta sección puede explicar que la fotometría corporal se utiliza como
-              herramienta informativa para orientar la conversación clínica sobre
-              equilibrio mineral, estado general y factores complementarios que podrían
-              ser relevantes dentro de una valoración más amplia.
-            </p>
+            <p>La fotometría corporal se utiliza como herramienta informativa para orientar la conversación clínica sobre equilibrio mineral, estado general y factores complementarios.</p>
             <ul class="tab-list">
               <li>Información complementaria del estado corporal</li>
               <li>Apoyo visual para educación del paciente</li>
               <li>Integración con la consulta clínica</li>
             </ul>
           </div>
-
           <div class="tab-content" id="tab2">
-            <p>
-              La interpretación siempre debe presentarse como parte de un análisis
-              profesional. La página puede comunicar que los resultados se entienden
-              en contexto, junto con síntomas, antecedentes, exploración y criterio médico.
-            </p>
+            <p>La interpretación siempre se presenta como parte de un análisis profesional. Los resultados se entienden en contexto, junto con síntomas, antecedentes y criterio médico.</p>
             <ul class="tab-list">
               <li>No reemplaza la consulta médica</li>
               <li>No sustituye laboratorios cuando estos se requieren</li>
               <li>Funciona como apoyo dentro del proceso de valoración</li>
             </ul>
           </div>
-
           <div class="tab-content" id="tab3">
-            <p>
-              Este apartado puede resultar atractivo para personas interesadas en una
-              visión más amplia de su estado general, pacientes en procesos de bienestar
-              integral o quienes buscan una valoración complementaria y orientadora.
-            </p>
+            <p>Resulta útil para personas interesadas en una visión más amplia de su estado general, pacientes en procesos de bienestar integral o quienes buscan una valoración complementaria.</p>
             <ul class="tab-list">
               <li>Pacientes que desean una evaluación ampliada</li>
               <li>Personas en procesos de bienestar integral</li>
@@ -391,127 +425,88 @@
 
         <div class="accordion reveal">
           <div class="accordion-item active">
-            <button class="accordion-header">
-              ¿Por qué este apartado debe verse completo e interactivo?
-              <span>+</span>
-            </button>
-            <div class="accordion-body">
-              <p>
-                Porque es uno de los elementos que más puede diferenciar la página.
-                Al presentarlo con diseño interactivo, pestañas y explicaciones bien
-                redactadas, el sitio transmite innovación, estructura y mayor valor percibido.
-              </p>
-            </div>
+            <button class="accordion-header">¿Por qué este apartado debe verse completo e interactivo?<span>+</span></button>
+            <div class="accordion-body"><p>Porque es uno de los elementos que más puede diferenciar la página. Al presentarlo con diseño interactivo, pestañas y explicaciones bien redactadas, el sitio transmite innovación, estructura y mayor valor percibido.</p></div>
           </div>
-
           <div class="accordion-item">
-            <button class="accordion-header">
-              ¿Cómo encaja dentro del estilo del sitio?
-              <span>+</span>
-            </button>
-            <div class="accordion-body">
-              <p>
-                Encaja muy bien dentro de una estética médica moderna. La combinación
-                de tarjetas, bloques informativos y recursos interactivos refuerza
-                la identidad visual limpia, tecnológica y profesional de la página.
-              </p>
-            </div>
+            <button class="accordion-header">¿Cómo encaja dentro del estilo del sitio?<span>+</span></button>
+            <div class="accordion-body"><p>Encaja muy bien dentro de una estética médica moderna. La combinación de tarjetas, bloques informativos y recursos interactivos refuerza la identidad visual limpia, tecnológica y profesional de la página.</p></div>
           </div>
-
           <div class="accordion-item">
-            <button class="accordion-header">
-              ¿Qué mensaje transmite al paciente?
-              <span>+</span>
-            </button>
-            <div class="accordion-body">
-              <p>
-                Transmite que la práctica no se limita a una consulta tradicional,
-                sino que incorpora herramientas complementarias y una visión más amplia
-                del acompañamiento clínico y del bienestar.
-              </p>
-            </div>
+            <button class="accordion-header">¿Qué mensaje transmite al paciente?<span>+</span></button>
+            <div class="accordion-body"><p>Transmite que la práctica no se limita a una consulta tradicional, sino que incorpora herramientas complementarias y una visión más amplia del acompañamiento clínico y del bienestar.</p></div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         VIDEOS — 3 videos informativos
+         VideoInformativo / Bruxismo / Masaje
+    ═══════════════════════════════════════════ -->
     <section class="section videos-section" id="videos">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">Contenido audiovisual</span>
           <h2>Videos informativos</h2>
-          <p>
-            Este espacio fue diseñado para integrar tus videos dentro de la narrativa
-            visual del sitio y reforzar la parte educativa e informativa de la página.
-          </p>
+          <p>Contenido educativo para que conozca más sobre nuestra propuesta y los temas de salud que abordamos.</p>
         </div>
 
         <div class="video-grid">
           <article class="video-card reveal">
             <div class="video-frame">
-              <video controls preload="metadata" poster="public/WhatsApp Image 2026-04-14 at 9.34.10 PM (4).jpeg">
+              <video controls preload="metadata">
                 <source src="public/VideoInformativo.mp4" type="video/mp4" />
                 Tu navegador no soporta el video.
               </video>
             </div>
             <div class="video-content">
               <h3>Importancia de la Salud</h3>
-              <p>
-                ¿Te has tomado tu tiempo para pensar en tu salud?
-              </p>
+              <p>¿Te has tomado tu tiempo para pensar en tu salud?</p>
             </div>
           </article>
 
           <article class="video-card reveal delay-1">
             <div class="video-frame">
-              <video controls preload="metadata" poster="public/WhatsApp Image 2026-04-14 at 9.34.10 PM (3).jpeg">
+              <video controls preload="metadata">
                 <source src="public/VideoInformativoBrunxismo.mp4" type="video/mp4" />
                 Tu navegador no soporta el video.
               </video>
             </div>
             <div class="video-content">
               <h3>Bruxismo</h3>
-              <p>
-                Conozca mas sobre esta patologia que es mas comun de lo que crees.
-              </p>
+              <p>Conozca más sobre esta patología, más común de lo que cree.</p>
             </div>
           </article>
 
           <article class="video-card reveal delay-2">
             <div class="video-frame">
-              <video controls preload="metadata" poster="public/WhatsApp Image 2026-04-14 at 9.34.10 PM (5).jpeg">
+              <video controls preload="metadata">
                 <source src="public/VideoMasaje.mp4" type="video/mp4" />
                 Tu navegador no soporta el video.
               </video>
             </div>
             <div class="video-content">
               <h3>Masajes Relajantes</h3>
-              <p>
-                Conoce nuestro servicio de masaje relajante ideal para tu bienestar.
-              </p>
+              <p>Conozca nuestro servicio de masaje relajante, ideal para su bienestar.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section form-section" id="contacto-rapido">
+    <!-- ═══════════════════════════════════════════
+         CONTACTO RÁPIDO
+    ═══════════════════════════════════════════ -->
+    <section class="section form-section light-bg" id="contacto-rapido">
       <div class="container form-grid">
         <div class="form-info reveal">
           <span class="section-tag">Contacto</span>
           <h2>Agenda tu cita o solicita información</h2>
-          <p>
-            Esta página es meramente informativa, por lo que el contacto se realiza
-            de forma directa por medio de WhatsApp, llamada o correo electrónico.
-          </p>
-
+          <p>El contacto se realiza de forma directa por medio de WhatsApp, llamada o correo electrónico.</p>
           <div class="contact-cta-row">
-            <a href="https://wa.me/50683371466" target="_blank" class="btn btn-primary">
-              WhatsApp
-            </a>
-            <a href="tel:+50683371466" class="btn btn-secondary">
-              Llamar ahora
-            </a>
+            <a href="https://wa.me/50683371466" target="_blank" class="btn btn-primary">WhatsApp</a>
+            <a href="tel:+50683371466" class="btn btn-secondary">Llamar ahora</a>
           </div>
         </div>
 
@@ -519,12 +514,10 @@
           <h3>Horario de atención</h3>
           <p>Lunes a Viernes: 8:00 am – 6:00 pm</p>
           <p>Sábados: 8:00 am – 12:00 md</p>
-
           <div class="contact-item" style="margin-top:20px;">
             <strong>WhatsApp</strong>
             <span>+506 8337-1466</span>
           </div>
-
           <div class="contact-item">
             <strong>Correo</strong>
             <span>info@carnegie-med.com</span>
@@ -533,31 +526,28 @@
       </div>
     </section>
 
-    <section class="section contact-section light-bg" id="contacto">
+    <!-- ═══════════════════════════════════════════
+         UBICACIÓN / MAPA
+    ═══════════════════════════════════════════ -->
+    <section class="section contact-section" id="contacto">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">Ubicación</span>
           <h2>Contacto y ubicación</h2>
-          <p>
-            Puedes colocar aquí la dirección exacta, datos de contacto y el mapa
-            de Google Maps de la clínica.
-          </p>
+          <p>Encuéntrenos fácilmente y contáctenos por el canal de su preferencia.</p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-card reveal">
             <h3>Información de contacto</h3>
-
             <div class="contact-item">
               <strong>Teléfono</strong>
               <span>+506 8337-1466</span>
             </div>
-
             <div class="contact-item">
               <strong>Correo</strong>
               <span>info@carnegie-med.com</span>
             </div>
-
             <div class="contact-item">
               <strong>Ubicación</strong>
               <span>Dirección pendiente de actualizar</span>
@@ -566,7 +556,7 @@
 
           <div class="map-card reveal delay-1">
             <iframe
-              title="Mapa de ubicación"
+              title="Mapa de ubicación Carnegie Med"
               src="https://www.google.com/maps?q=San%20Jose%20Costa%20Rica&z=13&output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -575,30 +565,31 @@
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Carnegie Med</h3>
-        <p>
-          Sitio informativo con una propuesta visual moderna para presentar servicios
-          de medicina, terapia física, medicina regenerativa y herramientas complementarias.
-        </p>
+        <div class="footer-logo">
+          <img src="public/LogoNegro.jpeg" alt="Carnegie Med" class="footer-logo-img" />
+        </div>
+        <p>Sitio informativo con una propuesta visual moderna para presentar servicios de medicina, terapia física, medicina regenerativa y herramientas complementarias.</p>
       </div>
-
       <div>
         <h4>Navegación</h4>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#fotometria">Fotometría</a></li>
           <li><a href="#videos">Videos</a></li>
-          <li><a href="#galeria">Galería</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
-
       <div>
         <h4>Contacto</h4>
         <ul>
@@ -608,14 +599,12 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2026 Carnegie Med. Todos los derechos reservados.</p>
     </div>
   </footer>
 
   <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
-
   <script src="script.js"></script>
 </body>
 </html>
