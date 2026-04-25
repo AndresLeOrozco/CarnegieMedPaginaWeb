@@ -1,203 +1,3 @@
-
-/
-Claude terminó la respuesta
-Dijiste: Este es el codigo final con unos pequeños cambios que agregué
-
-<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Carnegie Med | Medicina Regenerativa, Terapia Física y Rehabilitación</title> <meta name="description" content="Sitio informativo de C
-
-pasted
-
-
-/* ═══════════════════════════════════════════ VARIABLES & RESET ═══════════════════════════════════════════ */ :root { --primary: #5fc3be; --primary-dark: #0f4376; --secondary: #9cded9; --accent: #f3f5f7; --white: #ffffff; --text: #18324a; --text-soft: #5f6f7d; --borde
-
-pasted
-
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menuToggle");
-  const nav = document.getElementById("nav");
-  const backToTop = document.getElementById("backToTop");
-  const revealElements = document.querySelectorAll(".reveal");
-  const statNumbers = document.querySelectorAll(".stat-number");
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const tabContents = document.querySelectorAll(".tab-content");
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
-
-  if (menuToggle && nav) {
-    menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-    });
-
-    nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-      });
-    });
-  }
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 280) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
-  });
-
-  if (backToTop) {
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-  }
-
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    {
-      threshold: 0.14,
-    }
-  );
-
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
-  });
-
-  let statsAnimated = false;
-
-  function animateStats() {
-    statNumbers.forEach((stat) => {
-      const target = Number(stat.getAttribute("data-target"));
-      let current = 0;
-      const increment = Math.max(1, Math.ceil(target / 40));
-
-      const counter = setInterval(() => {
-        current += increment;
-
-        if (current >= target) {
-          stat.textContent = target;
-          clearInterval(counter);
-        } else {
-          stat.textContent = current;
-        }
-      }, 35);
-    });
-  }
-
-  const statsSection = document.querySelector(".stats");
-
-  if (statsSection) {
-    const statsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !statsAnimated) {
-            statsAnimated = true;
-            animateStats();
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    statsObserver.observe(statsSection);
-  }
-
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetId = button.getAttribute("data-tab");
-
-      tabButtons.forEach((btn) => btn.classList.remove("active"));
-      tabContents.forEach((content) => content.classList.remove("active"));
-
-      button.classList.add("active");
-      const activeContent = document.getElementById(targetId);
-
-      if (activeContent) {
-        activeContent.classList.add("active");
-      }
-    });
-  });
-
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", () => {
-      const item = header.parentElement;
-      const isActive = item.classList.contains("active");
-
-      document.querySelectorAll(".accordion-item").forEach((accordionItem) => {
-        accordionItem.classList.remove("active");
-      });
-
-      if (!isActive) {
-        item.classList.add("active");
-      }
-    });
-  });
-});
-Este es el codigo final con unos pequeños cambios que agregué
-
-Mostrar más
-15:07
-Claude respondió: Entendido, tengo el código completo de Carnegie Med: el HTML, CSS y JavaScript.
-Entendido, tengo el código completo de Carnegie Med: el HTML, CSS y JavaScript. ¿En qué te puedo ayudar con este proyecto? Por ejemplo:
-
-Ajustes de diseño o contenido
-Agregar nuevas secciones
-Mejorar el responsive
-Optimizaciones de rendimiento
-Algo específico que quieras cambiar
-Dijiste: ok, me gustaria unos pequeños cambios de diseño y texto en la parte de servicios, los servicios
-ok, me gustaria unos pequeños cambios de diseño y texto en la parte de servicios, los servicios
-
-en la parte que dice área de atención tenemos medicina regenerativa y terapia luz roja general y terapia física. Me gustaría que la terapia de luz roja fuera como  en un inciso aparte y ahí podemos mencionar los beneficios de la terapia de luz roja, activación mitocondria, disminución de la inflamación, disminución del dolor, curación de heridas, regeneración celular
-Y en la parte de medicina regenerativa, podríamos agregarle y Sueroterapia y el la leyenda le colocamos” damos un abordaje integral a cada paciente con un enfoque personalizado, de acuerdo a las deficiencias vitamínicas y minerales encontradas en el paciente con el fin de tratar al paciente de lo más básico hasta lo más complejo y abordar cada célula de su organismo, de la mejor manera.
-
-Ademas en el apartado de terapia fisica debes agregar:
-
-Con más de 15 años de experiencia en el tratamiento de lesiones deportivas, molestias articulares, lusus, músculo esquelético y procesos de rehabilitación. Nos hemos dado cuenta que el 80% de la recuperación del paciente depende de la dirección y el buen consejo profesional que pueda seguir
-
-genera los cambios necesarios para adecuar esto, generame el codigo completo de html y css en caso de generar cambios
-
-Mostrar más
-15:11
-Claude respondió: Los cambios son principalmente de contenido y estructura de tarjetas.
-
-Check frontend design skill
-Check frontend design skill
-Los cambios son principalmente de contenido y estructura de tarjetas. Voy a modificar la sección de servicios en el HTML y ajustar el CSS para agregar la tarjeta nueva de Terapia de Luz Roja. Solo los archivos afectados son index.html y styles.css.
-
-
-Se crearon 2 archivos, archivo leído
-Se crearon 2 archivos, archivo leído
-Aquí están los archivos actualizados. Los cambios realizados en la sección de servicios:
-
-Terapia Física — se agregó el párrafo de los 15 años de experiencia y el dato del 80% de recuperación.
-
-Medicina Regenerativa — se renombró a "Medicina Regenerativa y Sueroterapia" y se reemplazó el texto anterior con la descripción del abordaje integral personalizado según deficiencias vitamínicas y minerales.
-
-Terapia de Luz Roja — ahora es una tarjeta aparte con formato horizontal (imagen a la izquierda, contenido a la derecha). Incluye los 5 beneficios en un grid de tarjetas visuales: activación mitocondrial, disminución de la inflamación, disminución del dolor, curación de heridas y regeneración celular.
-
-El JS (script.js) no requirió cambios.
-
-
-Index
-Código · HTML 
-
-Styles
-Código · CSS 
-
-
-
-
-
-Claude es IA y puede cometer errores. Por favor, verifica nuevamente las respuestas.
-Styles · CSS
-Copiar
-
 /* ═══════════════════════════════════════════
    VARIABLES & RESET
 ═══════════════════════════════════════════ */
@@ -217,14 +17,14 @@ Copiar
   --container: 1180px;
   --transition: all 0.3s ease;
 }
- 
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: "Poppins", sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
 img, video { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
- 
+
 /* ═══════════════════════════════════════════
    LAYOUT
 ═══════════════════════════════════════════ */
@@ -234,7 +34,7 @@ ul { list-style: none; }
 }
 .section { padding: 90px 0; }
 .light-bg { background: linear-gradient(180deg, #fbfcfd 0%, #f2f6f8 100%); }
- 
+
 /* ═══════════════════════════════════════════
    TYPOGRAPHY HELPERS
 ═══════════════════════════════════════════ */
@@ -266,7 +66,7 @@ ul { list-style: none; }
 .card-body p,
 .feature-mini-card p,
 .contact-card p { color: var(--text-soft); }
- 
+
 /* ═══════════════════════════════════════════
    HEADER / NAV
 ═══════════════════════════════════════════ */
@@ -296,11 +96,11 @@ ul { list-style: none; }
 .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
 .logo-title { font-size: 1.05rem; font-weight: 700; }
 .logo-subtitle { font-size: 0.82rem; color: var(--text-soft); }
- 
+
 .nav { display: flex; justify-content: center; align-items: center; gap: 22px; }
 .nav a { font-size: 0.95rem; font-weight: 500; transition: var(--transition); }
 .nav a:hover { color: var(--primary-dark); }
- 
+
 .social-header { display: flex; gap: 12px; align-items: center; }
 .social-header a {
   width: 38px; height: 38px;
@@ -313,10 +113,10 @@ ul { list-style: none; }
 .social-header svg { width: 18px; height: 18px; fill: var(--primary-dark); }
 .social-header a:hover { background: var(--primary-dark); transform: translateY(-2px); }
 .social-header a:hover svg { fill: var(--white); }
- 
+
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; }
 .menu-toggle span { display: block; width: 26px; height: 3px; background: var(--text); border-radius: 3px; margin: 5px 0; transition: var(--transition); }
- 
+
 /* ═══════════════════════════════════════════
    HERO
 ═══════════════════════════════════════════ */
@@ -347,7 +147,7 @@ ul { list-style: none; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
- 
+
 /* ═══════════════════════════════════════════
    BUTTONS
 ═══════════════════════════════════════════ */
@@ -364,7 +164,7 @@ ul { list-style: none; }
 .btn-primary:hover { transform: translateY(-2px); }
 .btn-secondary { background: var(--white); color: var(--text); border: 1px solid var(--border); }
 .btn-secondary:hover { border-color: var(--primary); color: var(--primary-dark); }
- 
+
 /* ═══════════════════════════════════════════
    BANNER STRIP
 ═══════════════════════════════════════════ */
@@ -380,7 +180,7 @@ ul { list-style: none; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
- 
+
 /* ═══════════════════════════════════════════
    ABOUT / NOSOTROS
 ═══════════════════════════════════════════ */
@@ -395,7 +195,7 @@ ul { list-style: none; }
 }
 .reverse .split-image { order: 2; }
 .reverse .split-content { order: 1; }
- 
+
 .section-image { position: relative; }
 .section-image img,
 .split-image img {
@@ -405,7 +205,7 @@ ul { list-style: none; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
- 
+
 .doctor-badge {
   position: absolute;
   bottom: 20px;
@@ -420,10 +220,10 @@ ul { list-style: none; }
 }
 .doctor-badge strong { display: block; color: var(--primary-dark); font-size: 0.98rem; margin-bottom: 4px; }
 .doctor-badge span { color: var(--text-soft); font-size: 0.85rem; }
- 
+
 .pill-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .pill { border: 1px solid var(--border); background: var(--white); padding: 10px 14px; border-radius: 999px; color: var(--text-soft); font-size: 0.92rem; }
- 
+
 /* ═══════════════════════════════════════════
    INTRO VIDEO
 ═══════════════════════════════════════════ */
@@ -457,12 +257,12 @@ ul { list-style: none; }
 .caption-badge strong { display: block; color: var(--primary-dark); font-size: 0.95rem; margin-bottom: 3px; }
 .caption-badge span { color: var(--text-soft); font-size: 0.82rem; }
 .intro-video-caption p { color: var(--text-soft); font-style: italic; line-height: 1.7; font-size: 0.95rem; }
- 
+
 /* ═══════════════════════════════════════════
    SERVICIOS — CARDS GRID (3 columnas)
 ═══════════════════════════════════════════ */
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
- 
+
 .service-card, .photometry-card, .video-card, .contact-card, .map-card, .feature-mini-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -477,14 +277,14 @@ ul { list-style: none; }
 .mini-list { margin-top: 14px; }
 .mini-list li { position: relative; padding-left: 20px; margin-bottom: 8px; color: var(--text-soft); font-size: 0.94rem; }
 .mini-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--primary); font-size: 1.2rem; line-height: 1; }
- 
+
 /* ═══════════════════════════════════════════
    TERAPIA DE LUZ ROJA — tarjeta ancha
 ═══════════════════════════════════════════ */
 .light-therapy-row {
   margin-top: 24px;
 }
- 
+
 .service-card--wide {
   display: grid;
   grid-template-columns: 340px 1fr;
@@ -492,7 +292,7 @@ ul { list-style: none; }
   overflow: hidden;
   border-radius: var(--radius-lg);
 }
- 
+
 .service-card--wide img {
   width: 100%;
   height: 100%;
@@ -500,11 +300,11 @@ ul { list-style: none; }
   object-fit: cover;
   border-radius: 0;
 }
- 
+
 .service-card--wide .card-body {
   padding: 32px 36px;
 }
- 
+
 /* Badge dentro de la tarjeta ancha */
 .card-badge {
   display: inline-block;
@@ -518,7 +318,7 @@ ul { list-style: none; }
   border-radius: 999px;
   margin-bottom: 14px;
 }
- 
+
 /* Grid de beneficios dentro de la tarjeta ancha */
 .benefits-grid {
   display: grid;
@@ -526,7 +326,7 @@ ul { list-style: none; }
   gap: 14px;
   margin-top: 22px;
 }
- 
+
 .benefit-item {
   display: flex;
   align-items: flex-start;
@@ -536,33 +336,33 @@ ul { list-style: none; }
   border-radius: var(--radius-sm);
   padding: 14px 16px;
 }
- 
+
 .benefit-icon {
   font-size: 1.3rem;
   line-height: 1;
   flex-shrink: 0;
   margin-top: 2px;
 }
- 
+
 .benefit-item strong {
   display: block;
   font-size: 0.9rem;
   color: var(--primary-dark);
   margin-bottom: 3px;
 }
- 
+
 .benefit-item span {
   font-size: 0.82rem;
   color: var(--text-soft);
   line-height: 1.4;
 }
- 
+
 /* ═══════════════════════════════════════════
    FEATURE MINI GRID (Regenerativa split)
 ═══════════════════════════════════════════ */
 .feature-mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 24px; }
 .feature-mini-card { padding: 22px; }
- 
+
 /* ═══════════════════════════════════════════
    GALERÍA DE LA CLÍNICA
 ═══════════════════════════════════════════ */
@@ -597,13 +397,13 @@ ul { list-style: none; }
   font-size: 0.9rem;
   font-weight: 600;
 }
- 
+
 /* ═══════════════════════════════════════════
    FOTOMETRÍA
 ═══════════════════════════════════════════ */
 .photometry-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 28px; }
 .photometry-card { padding: 28px; }
- 
+
 /* TABS */
 .tabs-wrapper { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: 24px; margin-bottom: 22px; }
 .tabs-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
@@ -614,7 +414,7 @@ ul { list-style: none; }
 .tab-list { margin-top: 14px; }
 .tab-list li { position: relative; padding-left: 24px; margin-bottom: 10px; color: var(--text-soft); }
 .tab-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--primary-dark); font-weight: 700; }
- 
+
 /* ACCORDION */
 .accordion { display: grid; gap: 14px; }
 .accordion-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow); }
@@ -622,7 +422,7 @@ ul { list-style: none; }
 .accordion-header span { font-size: 1.4rem; color: var(--primary-dark); }
 .accordion-body { display: none; padding: 0 22px 20px; }
 .accordion-item.active .accordion-body { display: block; }
- 
+
 /* ═══════════════════════════════════════════
    VIDEOS
 ═══════════════════════════════════════════ */
@@ -631,7 +431,7 @@ ul { list-style: none; }
 .video-frame { background: #000; aspect-ratio: 9 / 16; }
 .video-frame video { width: 100%; height: 100%; object-fit: cover; }
 .video-content { padding: 22px; }
- 
+
 /* ═══════════════════════════════════════════
    CONTACTO
 ═══════════════════════════════════════════ */
@@ -641,7 +441,7 @@ ul { list-style: none; }
 .contact-item strong { display: block; margin-bottom: 4px; }
 .contact-item span { color: var(--text-soft); }
 .map-card iframe { width: 100%; min-height: 360px; border: 0; border-radius: var(--radius-md); }
- 
+
 /* ═══════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════ */
@@ -656,7 +456,7 @@ ul { list-style: none; }
 .footer p, .footer li, .footer a { color: rgba(255,255,255,0.78); font-size: 0.95rem; }
 .footer li { margin-bottom: 8px; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); text-align: center; padding: 18px 0; }
- 
+
 /* ═══════════════════════════════════════════
    BACK TO TOP
 ═══════════════════════════════════════════ */
@@ -668,7 +468,7 @@ ul { list-style: none; }
   opacity: 0; visibility: hidden; transition: var(--transition); z-index: 999;
 }
 .back-to-top.show { opacity: 1; visibility: visible; }
- 
+
 /* ═══════════════════════════════════════════
    REVEAL ANIMATIONS
 ═══════════════════════════════════════════ */
@@ -676,7 +476,7 @@ ul { list-style: none; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .delay-1 { transition-delay: 0.12s; }
 .delay-2 { transition-delay: 0.24s; }
- 
+
 /* ═══════════════════════════════════════════
    RESPONSIVE — 1100px
 ═══════════════════════════════════════════ */
@@ -697,7 +497,7 @@ ul { list-style: none; }
   .photometry-layout { grid-template-columns: 1fr; }
   .reverse .split-image { order: 0; }
   .reverse .split-content { order: 0; }
- 
+
   /* Tarjeta ancha: en columna */
   .service-card--wide {
     grid-template-columns: 1fr;
@@ -710,7 +510,7 @@ ul { list-style: none; }
     grid-template-columns: repeat(2, 1fr);
   }
 }
- 
+
 /* ═══════════════════════════════════════════
    RESPONSIVE — 768px
 ═══════════════════════════════════════════ */
@@ -735,7 +535,7 @@ ul { list-style: none; }
   .logo-text { display: none; }
   .banner-img { max-height: 180px; border-radius: var(--radius-md); }
   .footer-grid { grid-template-columns: 1fr; }
- 
+
   /* Tarjeta ancha: columna única */
   .service-card--wide {
     grid-template-columns: 1fr;
@@ -751,7 +551,7 @@ ul { list-style: none; }
     padding: 24px;
   }
 }
- 
+
 /* ═══════════════════════════════════════════
    RESPONSIVE — 520px
 ═══════════════════════════════════════════ */
@@ -760,4 +560,3 @@ ul { list-style: none; }
   .hero-actions, .contact-cta-row { flex-direction: column; }
   .tab-btn { width: 100%; }
 }
- 
