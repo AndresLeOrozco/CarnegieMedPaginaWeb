@@ -278,6 +278,26 @@ ul { list-style: none; }
 .mini-list li { position: relative; padding-left: 20px; margin-bottom: 8px; color: var(--text-soft); font-size: 0.94rem; }
 .mini-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--primary); font-size: 1.2rem; line-height: 1; }
 
+.card-toggle {
+  margin-top: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 0.94rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-toggle::after { content: "▾"; font-size: 0.75rem; transition: transform 0.2s ease; }
+.card-toggle[aria-expanded="true"]::after { transform: rotate(180deg); }
+.card-toggle:hover { text-decoration: underline; }
+.card-details { display: none; margin-top: 14px; }
+.card-details.open { display: block; }
+.card-cta { display: inline-block; margin-top: 16px; }
+
 /* ═══════════════════════════════════════════
    TERAPIA DE LUZ ROJA — tarjeta ancha
 ═══════════════════════════════════════════ */

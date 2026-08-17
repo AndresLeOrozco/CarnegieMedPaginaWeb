@@ -72,7 +72,7 @@
     <!-- ═══════════════════════════════════════════
          HERO
     ═══════════════════════════════════════════ -->
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-content reveal">
           <h1>Un espacio para cuidar tu salud, tu movilidad y tu bienestar integral</h1>
@@ -206,12 +206,16 @@
             <img src="public/FotoTerapia2.jpeg" alt="Terapia física" />
             <div class="card-body">
               <h3>Terapia Física</h3>
-              <p>Con más de 15 años de experiencia en el tratamiento de lesiones deportivas, molestias articulares, lesiones músculo-esqueléticas y procesos de rehabilitación. Nos hemos dado cuenta de que el 80% de la recuperación del paciente depende de la dirección y el buen consejo profesional que pueda seguir.</p>
-              <ul class="mini-list">
-                <li>Lesiones deportivas</li>
-                <li>Dolor de hombro y rodilla</li>
-                <li>Recuperación funcional</li>
-              </ul>
+              <button class="card-toggle" data-target="details-terapia-fisica" aria-expanded="false">Ver más</button>
+              <div class="card-details" id="details-terapia-fisica">
+                <p>Con más de 15 años de experiencia en el tratamiento de lesiones deportivas, molestias articulares, lesiones músculo-esqueléticas y procesos de rehabilitación. Nos hemos dado cuenta de que el 80% de la recuperación del paciente depende de la dirección y el buen consejo profesional que pueda seguir.</p>
+                <ul class="mini-list">
+                  <li>Lesiones deportivas</li>
+                  <li>Dolor de hombro y rodilla</li>
+                  <li>Recuperación funcional</li>
+                </ul>
+                <a href="https://app.hulivida.com/citas/david-anthony-carnegie-richards_769a52" class="btn btn-primary btn-sm card-cta">Agendar ahora</a>
+              </div>
             </div>
           </article>
 
@@ -220,12 +224,16 @@
             <img src="public/FotoMedicina.jpeg" alt="Medicina general" />
             <div class="card-body">
               <h3>Medicina General</h3>
-              <p>Valoración médica integral, control de condiciones frecuentes y seguimiento clínico con una atención cercana y profesional.</p>
-              <ul class="mini-list">
-                <li>Consulta general</li>
-                <li>Control de enfermedades crónicas</li>
-                <li>Seguimiento médico</li>
-              </ul>
+              <button class="card-toggle" data-target="details-medicina-general" aria-expanded="false">Ver más</button>
+              <div class="card-details" id="details-medicina-general">
+                <p>Valoración médica integral, control de condiciones frecuentes y seguimiento clínico con una atención cercana y profesional.</p>
+                <ul class="mini-list">
+                  <li>Consulta general</li>
+                  <li>Control de enfermedades crónicas</li>
+                  <li>Seguimiento médico</li>
+                </ul>
+                <a href="https://app.hulivida.com/citas/david-anthony-carnegie-richards_769a52" class="btn btn-primary btn-sm card-cta">Agendar ahora</a>
+              </div>
             </div>
           </article>
 
@@ -234,12 +242,16 @@
             <img src="public/FotoMedicina2.jpeg" alt="Medicina regenerativa y sueroterapia" />
             <div class="card-body">
               <h3>Medicina Regenerativa y Sueroterapia</h3>
-              <p>Damos un abordaje integral a cada paciente con un enfoque personalizado, de acuerdo a las deficiencias vitamínicas y minerales encontradas en el paciente, con el fin de tratar al paciente de lo más básico hasta lo más complejo y abordar cada célula de su organismo de la mejor manera.</p>
-              <ul class="mini-list">
-                <li>Medicina regenerativa</li>
-                <li>Sueroterapia personalizada</li>
-                <li>Vitaminas y minerales individualizados</li>
-              </ul>
+              <button class="card-toggle" data-target="details-medicina-regenerativa" aria-expanded="false">Ver más</button>
+              <div class="card-details" id="details-medicina-regenerativa">
+                <p>Damos un abordaje integral a cada paciente con un enfoque personalizado, de acuerdo a las deficiencias vitamínicas y minerales encontradas en el paciente, con el fin de tratar al paciente de lo más básico hasta lo más complejo y abordar cada célula de su organismo de la mejor manera.</p>
+                <ul class="mini-list">
+                  <li>Medicina regenerativa</li>
+                  <li>Sueroterapia personalizada</li>
+                  <li>Vitaminas y minerales individualizados</li>
+                </ul>
+                <a href="https://app.hulivida.com/citas/david-anthony-carnegie-richards_769a52" class="btn btn-primary btn-sm card-cta">Agendar ahora</a>
+              </div>
             </div>
           </article>
 
@@ -294,54 +306,6 @@
           </article>
         </div>
 
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         SPLIT — TERAPIA FÍSICA
-    ═══════════════════════════════════════════ -->
-    <section class="section featured-split light-bg">
-      <div class="container split-grid">
-        <div class="split-image reveal">
-          <img src="public/DavidTerapeutico.jpeg" alt="Dr. David Carnegie – Terapia Física" />
-        </div>
-        <div class="split-content reveal delay-1">
-          <span class="section-tag">Terapia Física</span>
-          <h2>Movimiento, recuperación y función</h2>
-          <p>
-            La terapia física está pensada para personas que buscan atención en lesiones deportivas,
-            molestias articulares, dolor musculoesquelético y procesos de rehabilitación orientados
-            a recuperar seguridad y funcionalidad.
-          </p>
-          <p>
-            El Dr. David Carnegie acompaña a cada paciente desde una valoración clara
-            y una atención enfocada en mejorar movilidad, estabilidad y calidad de vida.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         SPLIT — MEDICINA GENERAL
-    ═══════════════════════════════════════════ -->
-    <section class="section featured-split">
-      <div class="container split-grid reverse">
-        <div class="split-image reveal">
-          <img src="public/DavidTerapeutico2.jpeg" alt="Dr. David Carnegie – Medicina General" />
-        </div>
-        <div class="split-content reveal delay-1">
-          <span class="section-tag">Medicina General</span>
-          <h2>Valoración médica clara y seguimiento profesional</h2>
-          <p>
-            La consulta médica está orientada a brindar una atención integral para pacientes
-            que requieren evaluación, orientación diagnóstica, control clínico o seguimiento
-            de condiciones frecuentes.
-          </p>
-          <p>
-            Un espacio de confianza donde cada paciente recibe atención individualizada,
-            información clara y un acompañamiento que trasciende la consulta.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -606,7 +570,7 @@
             </div>
             <div class="contact-item">
               <strong>Ubicación</strong>
-              <span>Dirección pendiente de actualizar</span>
+              <span>C. 7, Heredia, Corazon De Jesus</span>
             </div>
           </div>
 

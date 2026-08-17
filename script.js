@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabButtons = document.querySelectorAll(".tab-btn");
   const tabContents = document.querySelectorAll(".tab-content");
   const accordionHeaders = document.querySelectorAll(".accordion-header");
+  const cardToggles = document.querySelectorAll(".card-toggle");
 
   if (menuToggle && nav) {
     menuToggle.addEventListener("click", () => {
@@ -121,6 +122,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!isActive) {
         item.classList.add("active");
       }
+    });
+  });
+
+  cardToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const details = document.getElementById(toggle.getAttribute("data-target"));
+
+      if (!details) return;
+
+      const isOpen = details.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen);
+      toggle.textContent = isOpen ? "Ver menos" : "Ver más";
     });
   });
 });
