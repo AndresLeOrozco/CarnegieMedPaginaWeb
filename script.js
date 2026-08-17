@@ -126,6 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   cardToggles.forEach((toggle) => {
+    const label = toggle.querySelector(".card-toggle-label");
+
     toggle.addEventListener("click", () => {
       const details = document.getElementById(toggle.getAttribute("data-target"));
 
@@ -133,7 +135,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const isOpen = details.classList.toggle("open");
       toggle.setAttribute("aria-expanded", isOpen);
-      toggle.textContent = isOpen ? "Ver menos" : "Ver más";
+
+      if (label) {
+        label.textContent = isOpen ? "Ver menos" : "Ver más";
+      }
     });
   });
 });

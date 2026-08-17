@@ -279,23 +279,67 @@ ul { list-style: none; }
 .mini-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--primary); font-size: 1.2rem; line-height: 1; }
 
 .card-toggle {
-  margin-top: 4px;
-  background: transparent;
-  border: none;
-  padding: 0;
+  margin-top: 6px;
+  background: rgba(95, 195, 190, 0.08);
+  border: 1.5px solid var(--primary);
+  border-radius: 999px;
+  padding: 9px 10px 9px 20px;
   color: var(--primary-dark);
+  font-family: inherit;
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  transition: var(--transition);
 }
-.card-toggle::after { content: "▾"; font-size: 0.75rem; transition: transform 0.2s ease; }
-.card-toggle[aria-expanded="true"]::after { transform: rotate(180deg); }
-.card-toggle:hover { text-decoration: underline; }
-.card-details { display: none; margin-top: 14px; }
-.card-details.open { display: block; }
+.card-toggle:hover {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.card-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, color 0.3s ease;
+}
+.card-toggle-icon::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.card-toggle:hover .card-toggle-icon { background: var(--white); color: var(--primary-dark); }
+.card-toggle[aria-expanded="true"] .card-toggle-icon { transform: rotate(180deg); }
+
+.card-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-details.open { grid-template-rows: 1fr; }
+.card-details-inner {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.card-details.open .card-details-inner {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease 0.12s, transform 0.4s ease 0.12s;
+}
+.card-details-inner > p { margin-top: 14px; }
 .card-cta { display: inline-block; margin-top: 16px; }
 
 /* ═══════════════════════════════════════════
